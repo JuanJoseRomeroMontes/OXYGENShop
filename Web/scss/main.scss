@@ -314,5 +314,99 @@
         }
     }
 
+    &--pricing{
 
+        margin-top: 50px;
+        
+        &--title{
+            font-weight: 400;
+            font-size: 2.25rem;
+            line-height: 2.64rem;
+            text-align: center;
+        }
+
+        &--section{
+            width: 80%;
+            height: 15.7em;
+            margin: 10%;
+            border-radius: 5%;
+            
+
+            &--price{
+                display: inline-block;
+                position: relative;
+                width: 35%;
+                height: 90%;
+                text-align: center;
+                margin-left: 8%;
+                vertical-align: top;
+
+                &--title{
+                    padding-top: 50%;
+                    font-weight: 700;
+                    font-size: 1.25rem;
+                    line-height: 1.5rem;
+                }
+
+                &--cost{
+                    font-weight: 300;
+                    font-size: 2.875rem;
+                    line-height: 4rem;
+                }
+
+                &--offer{
+                    font-weight: 700;
+                    font-size: 0.75rem;
+                    line-height: 0.875rem;
+                }
+
+                &--extra-padding-top{
+                    padding-top: 70%;
+                }
+            }
+
+            &--feature-list{
+                display: inline-block;
+                width: 55%;
+                height: 90%;
+                padding-left: 7%;
+
+                &--feature{
+                    width: 100%;
+                    margin-top: 5px;
+
+                    &--img{
+                        display: inline-block;
+                    }
+
+                    &--text{
+                        display: inline-block;
+                        font-weight: 400;
+                        font-size: 0.875rem;
+                        line-height: 1.19rem;
+                        text-align: left;
+                        width: auto;
+                        margin-left: 5%;
+                        margin-top: 15px;
+                    }
+                }
+            }
+
+            &--rounded-button{
+                width: 50%;
+                height: 20%;
+                margin-left: 25%;
+                border: none;
+                border-radius: 23px;
+                
+                &--text{
+                    color: white;
+                    font-weight: 700;
+                    font-size: 0.813rem;
+                    line-height: 1.106rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
