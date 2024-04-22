@@ -238,11 +238,6 @@
             @include main-selling-point-section-style;
             padding: 1.5em;
 
-            &--image{
-                width: 80%;
-                margin-left: 15%;
-            }
-
             &--image--background{
                 position: absolute;
                 right: 8em;
@@ -253,7 +248,7 @@
 
             &--image--foreground{
                 position: relative;
-                margin-left: 1.5em;
+                margin-left: 4em;
                 width: 175px;
                 height: 134.99px;
                 z-index: 1;

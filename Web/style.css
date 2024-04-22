@@ -224,10 +224,6 @@
   width: 100%;
   padding: 1.5em;
 }
-.main--selling-points--section2--image {
-  width: 80%;
-  margin-left: 15%;
-}
 .main--selling-points--section2--image--background {
   position: absolute;
   right: 8em;
@@ -237,7 +233,7 @@
 }
 .main--selling-points--section2--image--foreground {
   position: relative;
-  margin-left: 1.5em;
+  margin-left: 4em;
   width: 175px;
   height: 134.99px;
   z-index: 1;
