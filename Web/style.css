@@ -5,9 +5,8 @@
 .header--logo {
   display: inline-block;
   width: 80%;
-  margin-top: 4%;
-  margin-bottom: 1%;
-  margin-left: 5%;
+  margin-top: 17px;
+  margin-left: 25px;
 }
 .header--logo--text {
   font-size: 2rem;
@@ -15,7 +14,283 @@
 }
 .header--menu {
   display: inline-block;
-  margin-bottom: 1%;
+  margin-bottom: 1.5%;
+}
+
+.main {
+  margin-top: 100px;
+}
+.main--introduction--opening {
+  margin-left: 8.3%;
+  width: 83%;
+}
+.main--introduction--opening--title {
+  font-size: 2.188rem;
+  line-height: 2.563rem;
+  font-weight: 400;
+  text-align: center;
+}
+.main--introduction--opening--subtitle {
+  margin-top: 20px;
+  font-size: 1rem;
+  line-height: 1.438rem;
+  font-weight: 400;
+  text-align: center;
+}
+.main--introduction--opening--button {
+  margin-top: 30px;
+  width: 100%;
+  height: 5em;
+  border: none;
+  border-radius: 5em;
+  box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.2901960784);
+}
+.main--introduction--opening--button--text {
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+}
+.main--introduction--image-box {
+  margin-top: 30px;
+  width: 100%;
+  height: 16.7em;
+  overflow: hidden;
+}
+.main--introduction--image-box--image {
+  margin-left: -55%;
+  height: 100%;
+}
+.main--introduction--stat-column--title {
+  margin-left: 8.3%;
+  width: 83%;
+  font-size: 1.875rem;
+  line-height: 2.188rem;
+  font-weight: 300;
+  text-align: center;
+}
+.main--introduction--stat-column--entries {
+  margin-top: 25px;
+  width: 50%;
+  min-width: 170px;
+  margin-left: 30%;
+}
+.main--introduction--stat-column--entries--image-background {
+  margin-left: 25%;
+  display: inline-block;
+}
+.main--introduction--stat-column--entries--image-foreground {
+  display: inline-block;
+  position: relative;
+  left: -2.3em;
+  top: -0.6em;
+}
+.main--introduction--stat-column--entries--number {
+  margin-top: 10px;
+  margin-left: -10%;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0.375rem;
+}
+.main--introduction--stat-column--entries--stat {
+  margin-top: 10px;
+  margin-left: -15%;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  color: #A5A5A5;
+}
+.main--introduction--stat-column--products {
+  margin-top: 25px;
+  width: 50%;
+  min-width: 170px;
+  margin-left: 30%;
+}
+.main--introduction--stat-column--products--image-background {
+  margin-left: 25%;
+  display: inline-block;
+}
+.main--introduction--stat-column--products--image-foreground {
+  display: inline-block;
+  position: relative;
+  left: -2.9em;
+  top: -1em;
+}
+.main--introduction--stat-column--products--number {
+  margin-top: 10px;
+  margin-left: -5%;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0.375rem;
+}
+.main--introduction--stat-column--products--stat {
+  width: 70%;
+  margin-top: 10px;
+  margin-left: 10%;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  color: #A5A5A5;
+}
+.main--introduction--stat-column--post {
+  margin-top: 25px;
+  width: 50%;
+  min-width: 170px;
+  margin-left: 30%;
+}
+.main--introduction--stat-column--post--image-background {
+  margin-left: 25%;
+  display: inline-block;
+}
+.main--introduction--stat-column--post--image-foreground {
+  display: inline-block;
+  position: relative;
+  left: -2.3em;
+  top: -0.6em;
+}
+.main--introduction--stat-column--post--number {
+  margin-top: 10px;
+  margin-left: -10%;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0.375rem;
+}
+.main--introduction--stat-column--post--stat {
+  width: 50%;
+  margin-top: 10px;
+  margin-left: 20%;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  color: #A5A5A5;
+}
+.main--selling-points {
+  background: #F7F7F7;
+  margin-top: 20px;
+  padding: 30px;
+}
+.main--selling-points--section1 {
+  background-color: #ffffff;
+  border: 1px solid #E8E9ED;
+  border-radius: 5px;
+  margin-top: 50px;
+  width: 100%;
+  padding: 1.5em;
+  padding-top: 2.2em;
+}
+.main--selling-points--section1--image-background {
+  position: absolute;
+  right: 4.2em;
+  margin-top: -2.2em;
+  width: 127.5px;
+  height: 127.5px;
+}
+.main--selling-points--section1--image-foreground {
+  position: relative;
+  margin-left: 2em;
+  width: 192.76px;
+  height: 109.93px;
+  z-index: 1;
+}
+.main--selling-points--section1--title {
+  margin-top: 1em;
+  font-size: 1.875rem;
+  line-height: 2.19rem;
+  font-weight: 500;
+  text-align: left;
+}
+.main--selling-points--section1--text {
+  margin-top: 4em;
+  font-size: 0.875rem;
+  line-height: 1.31rem;
+  font-weight: 500;
+  text-align: left;
+}
+.main--selling-points--section2 {
+  background-color: #ffffff;
+  border: 1px solid #E8E9ED;
+  border-radius: 5px;
+  margin-top: 50px;
+  width: 100%;
+  padding: 1.5em;
+}
+.main--selling-points--section2--image {
+  width: 80%;
+  margin-left: 15%;
+}
+.main--selling-points--section2--image--background {
+  position: absolute;
+  right: 8em;
+  margin-top: -0.3em;
+  width: 132px;
+  height: 132px;
+}
+.main--selling-points--section2--image--foreground {
+  position: relative;
+  margin-left: 1.5em;
+  width: 175px;
+  height: 134.99px;
+  z-index: 1;
+}
+.main--selling-points--section2--title {
+  width: 80%;
+  margin-top: 0.7em;
+  font-size: 1.875rem;
+  line-height: 2.19rem;
+  font-weight: 500;
+  text-align: left;
+}
+.main--selling-points--section2--text {
+  margin-top: 1.5em;
+  font-size: 0.875rem;
+  line-height: 1.31rem;
+  font-weight: 500;
+  text-align: left;
+}
+.main--selling-points--section3 {
+  background-color: #ffffff;
+  border: 1px solid #E8E9ED;
+  border-radius: 5px;
+  margin-top: 50px;
+  width: 100%;
+}
+.main--selling-points--section3--image-background {
+  height: 195px;
+  margin-top: 10px;
+  border: 1px solid #E8E9ED;
+  border-radius: 5px;
+}
+.main--selling-points--section3--image-foreground {
+  width: 300px;
+  height: 207px;
+  position: relative;
+  top: 15%;
+  left: -5%;
+}
+.main--selling-points--section3--title {
+  margin: 0.7em;
+  font-size: 1.875rem;
+  line-height: 2.19rem;
+  font-weight: 500;
+  text-align: left;
+}
+.main--selling-points--section3--text {
+  margin: 1.5em;
+  margin-top: 2em;
+  font-size: 1.125rem;
+  line-height: 1.36rem;
+  font-weight: 500;
+  text-align: left;
 }
 
 * {
@@ -34,6 +309,14 @@ body {
 
 .blue-text {
   color: var(--blue-color);
+}
+
+.blue-background {
+  background-color: var(--blue-color);
+}
+
+.green-background {
+  background-color: var(--green-color);
 }
 
 .open-sans {

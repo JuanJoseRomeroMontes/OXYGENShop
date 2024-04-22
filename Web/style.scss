@@ -1,4 +1,6 @@
-@use 'scss/header.scss';
+@import 'scss/header.scss';
+@import 'scss/main.scss';
+
 
 * {
     box-sizing: border-box;
@@ -16,6 +18,14 @@ body {
 
 .blue-text{
     color: var(--blue-color);
+}
+
+.blue-background{
+    background-color: var(--blue-color);
+}
+
+.green-background{
+    background-color: var(--green-color);
 }
 
 .open-sans{
