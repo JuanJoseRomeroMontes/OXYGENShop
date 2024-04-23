@@ -412,6 +412,7 @@
   margin-top: 30px;
 }
 .main--contact--input--container--text {
+  display: block;
   font-weight: 600;
   font-size: 0.69rem;
   line-height: 0.94rem;
@@ -419,7 +420,7 @@
 }
 .main--contact--input--container--input {
   margin-top: 20px;
-  width: 100%;
+  width: 90%;
   border: none;
   border-bottom: 1px solid #95989A;
 }
