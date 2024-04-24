@@ -47,9 +47,9 @@
             justify-content: space-around;
 
             &--option{
-                padding: 5%;
                 display: flex;
                 align-items: center;
+                height: 100%;
 
                 &--text{
                     font-size: 0.688rem;
@@ -63,10 +63,10 @@
             }
 
             &--selected-option{
-                padding: 5%;
                 display: flex;
                 align-items: center;
                 border-bottom: 4px solid #08A6E4;
+                height: 100%;
 
                 &--text{
                     font-size: 0.688rem;

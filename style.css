@@ -41,9 +41,9 @@
     justify-content: space-around;
   }
   .header--desktop-menu--option {
-    padding: 5%;
     display: flex;
     align-items: center;
+    height: 100%;
   }
   .header--desktop-menu--option--text {
     font-size: 0.688rem;
@@ -55,10 +55,10 @@
     color: #A5A5A5;
   }
   .header--desktop-menu--selected-option {
-    padding: 5%;
     display: flex;
     align-items: center;
     border-bottom: 4px solid #08A6E4;
+    height: 100%;
   }
   .header--desktop-menu--selected-option--text {
     font-size: 0.688rem;
@@ -493,7 +493,9 @@
 .main--contact--send--checkbox {
   display: inline-block;
   vertical-align: top;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 1.5rem;
   height: 1.5rem;
   border: 1px solid #95989A;
@@ -1028,6 +1030,4 @@ body {
 
 .open-sans {
   font-family: openSans;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
