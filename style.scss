@@ -1,6 +1,6 @@
 @import 'scss/header.scss';
 @import 'scss/main.scss';
-
+@import 'scss/footer.scss';
 
 * {
     box-sizing: border-box;
@@ -20,8 +20,32 @@ body {
     color: var(--blue-color);
 }
 
+.red-text{
+    color: var(--red-color);
+}
+
+.green-text{
+    color: var(--green-color);
+}
+
+.blue-border{
+    border: 1.5px solid var(--blue-color);
+}
+
+.red-border{
+    border: 1.5px solid var(--red-color);
+}
+
+.green-border{
+    border: 1.5px solid var(--green-color);
+}
+
 .blue-background{
     background-color: var(--blue-color);
+}
+
+.red-background{
+    background-color: var(--red-color);
 }
 
 .green-background{
