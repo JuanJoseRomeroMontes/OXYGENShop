@@ -3,18 +3,18 @@
     padding: 5%;
     box-shadow: 0px -5px 40px #00000033; 
 
-    &--text{
+    &__text{
         display: inline-block;
         width: 70%;
 
-        &--title{
+        &__title{
             font-size: 1.625rem;
             line-height: 1.875rem;
             font-weight: 300;
             text-align: left;
         }
 
-        &--subtitle{
+        &__subtitle{
             font-size: 0.69rem;
             line-height: 0.94rem;
             font-weight: 300;
@@ -24,13 +24,13 @@
 
     }
 
-    &--social-networks{
+    &__social-networks{
         display: inline-block;
         vertical-align: top;
         width: 25%;
         height: 100%;
 
-        &--icon{
+        &__icon{
             display: inline-block;
             width: 24px;
             height: 24px;
@@ -46,7 +46,7 @@
         justify-content: space-evenly;
         padding: 1%;
 
-        &--text{
+        &__text{
             width: 80%;
             padding-left: 5%;
             display: flex;
@@ -54,14 +54,14 @@
             justify-content: space-around;
         }
 
-        &--social-networks{
+        &__social-networks{
             display: flex;
             align-items: center;
             width: 10%;
             height: 50px;
             justify-content: space-evenly;
 
-            &--icon{
+            &__icon{
                 margin: 0;
             }
         }
