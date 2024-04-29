@@ -2,6 +2,16 @@
     height: 4em;
     box-shadow: 0px 3px 6px #0000004A;
 
+    &__percentage-scroller{
+        background-color: red;
+        width: 0%;
+        height: 2px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: width linear 0.3s;
+    }
+
     &__logo{
         display: inline-block;
         width: 80%;
