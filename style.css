@@ -830,18 +830,27 @@
   margin-top: 25px;
 }
 .main__contact__form__send__checkbox {
-  display: inline-block;
-  vertical-align: top;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 1px solid #95989A;
-  border-radius: 4px;
+  cursor: pointer;
+}
+.main__contact__form__send__checkbox input {
+  display: none;
+}
+.main__contact__form__send__checkbox input:checked ~ span {
   background-image: url(img/Checkbox_check.svg);
   background-repeat: no-repeat;
   background-position: center;
+}
+.main__contact__form__send__checkbox input:checked ~ span:after {
+  opacity: 1;
+}
+.main__contact__form__send__checkbox span {
+  display: inline-block;
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: white;
+  border: 1px solid #95989A;
+  border-radius: 4px;
 }
 .main__contact__form__send__text {
   display: inline-block;

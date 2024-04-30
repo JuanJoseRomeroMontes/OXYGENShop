@@ -266,11 +266,14 @@
                 </div>
     
                 <form class="main__contact__form__send">
-                    <input type="checkbox" id="checkbox" class="main__contact__form__send__checkbox" aria-label="Checkbox">
+                    <label class="main__contact__form__send__checkbox">
+                        <input type="checkbox" id="checkbox"  aria-label="Checkbox">
+                        <span id="checkbox-visual"></span>
+                    </label>
 
                     <p class="main__contact__form__send__text">I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the European Parliament’s and Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive)</p>
     
-                    <input type="submit" value="Send" class="main__contact__form__send__rounded-button blue-background main__contact__send__rounded-button__text" >
+                    <button type="button" class="main__contact__form__send__rounded-button blue-background main__contact__send__rounded-button__text" onclick="SendFormularyData()"> Send </button>
                 </form>
             </article>
         </section>
