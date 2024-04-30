@@ -10,6 +10,7 @@
   top: 0;
   left: 0;
   transition: width linear 0.3s;
+  z-index: 999;
 }
 .nav__logo {
   display: inline-block;
@@ -1002,6 +1003,28 @@
 
 .main {
   margin-top: 100px;
+}
+.main__button-container {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.main__button-container__return-button {
+  padding: 1.65em 6em;
+  border: none;
+  border-radius: 5em;
+  box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.2901960784);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.106rem;
+  text-align: center;
+  transition: scale 2s;
+}
+.main__button-container__return-button:hover {
+  cursor: pointer;
+  scale: 1.1;
 }
 
 body {

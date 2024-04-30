@@ -17,6 +17,31 @@
 
 .main{
     margin-top: 100px;
+
+    &__button-container{
+        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        &__return-button{
+            padding: 1.65em 6em;
+            border: none;
+            border-radius: 5em;
+            box-shadow: 5px 10px 14px #07ACE64A;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.106rem;
+            text-align: center;
+            transition: scale 2s;
+        }
+
+        &__return-button:hover{
+            cursor: pointer;
+            scale: 1.1;
+        }
+    }
 }
 
 body {

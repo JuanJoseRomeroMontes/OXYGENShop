@@ -7,5 +7,10 @@ window.onscroll = (e) => {
     var actualHeight = window.scrollY;
     var percentage = (actualHeight/maxHeight)*100;
     barFill.style.width = percentage+"%";
-    console.log(percentage+"%");
+}
+
+async function ReturnTop(){
+    setTimeout(function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 200);
 }
