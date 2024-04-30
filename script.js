@@ -23,12 +23,26 @@ function SendFormularyData(){
     const name = visualElements[0].value;
     const email = visualElements[1].value;
     const checkbox = document.getElementById("checkbox").checked;
-    
+
     //Data validation and visual feedback
     const validData = ValidateFormularyData(name, email, checkbox, visualElements);
 
     if(validData)
-    { console.log("Valid data"); }
+    { 
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                checkbox: checkbox,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8', 
+            },
+        })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+    }
     else
     { console.log("INVALID data"); }
 }
