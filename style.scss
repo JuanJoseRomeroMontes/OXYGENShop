@@ -1,4 +1,5 @@
 @import 'scss/nav.scss';
+@import 'scss/modal.scss';
 @import 'scss/header.scss';
 @import 'scss/selling-points.scss';
 @import 'scss/pricing.scss';
@@ -13,7 +14,7 @@
     --blue-color: #08A6E4;
     --green-color: #55DFB4;
     font-family: Raleway, OpenSans;
-}
+} 
 
 .main{
     margin-top: 100px;

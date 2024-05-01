@@ -1,19 +1,27 @@
-var maxHeight = document.body.offsetHeight-window.innerHeight;
+const maxHeight = document.body.offsetHeight-window.innerHeight;
 
-var barFill = document.querySelector(".nav__percentage-scroller");
+const barFill = document.querySelector(".nav__percentage-scroller");
+
+const regrex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 // Changes the size of the percentage scroller when the user scrolls
-window.onscroll = (e) => {  
-    var actualHeight = window.scrollY;
-    var percentage = (actualHeight/maxHeight)*100;
+document.addEventListener("scroll", function ScrollBar() {  
+    let actualHeight = window.scrollY;
+    let percentage = (actualHeight/maxHeight)*100;
     barFill.style.width = percentage+"%";
-}
+    if(percentage >= 25)
+    { ShowNewsletterModal(); }
+});
+
+//-------------
 
 function ReturnTop(){
     setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' })
     }, 200);
 }
+
+//-------------
 
 function SendFormularyData(){
     //Visual elements wich borders have to be set to red.
@@ -48,8 +56,7 @@ function SendFormularyData(){
 }
 
 function ValidateFormularyData(name, email, checkbox, visualElements){
-    var value = true;
-    const regrex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let value = true;
 
     if(!(name.length >= 2 && name.length <= 100)){
         value = false;
@@ -70,4 +77,82 @@ function ValidateFormularyData(name, email, checkbox, visualElements){
     else{ visualElements[2].style.border = null; }
 
     return value;
+}
+
+//-------------
+
+const newsletterModal = document.getElementById("Newsletter"); 
+const confirmation = document.querySelector("modal__content__confirmation");
+
+document.querySelector(".modal__content__close").addEventListener("click", CloseNewsletterModal);
+
+document.addEventListener("onclick", (event) => {
+    if (event.target == newsletterModal) {
+        CloseNewsletterModal();
+    }
+})
+
+document.addEventListener("onload", () => {
+    setTimeout(() => {
+        ShowNewsletterModal();
+    }, 5000);
+});
+/*
+window.onload = function(){
+    setTimeout(() => {
+        ShowNewsletterModal();
+    }, 5000);
+}*/
+
+//Register a click and closes window if its in the modal (the modal it's the grey part)
+document.addEventListener("onclick", (event) => {
+    if (event.target == newsletterModal) {
+        CloseNewsletterModal();
+    }
+})
+
+//DEBUG no funciona
+document.addEventListener("keydown", (key) => {
+    console.log(`pressed key`);
+    if(key.key == "Escape") {
+        CloseNewsletterModal(); 
+    }
+});
+
+document.querySelector(".modal__content__button").addEventListener("click", SendModalData);
+
+function ShowNewsletterModal(){
+    if(!sessionStorage.getItem("ModalClosed"))
+    { newsletterModal.style.display = "block"; }
+}
+
+function CloseNewsletterModal(){
+    newsletterModal.style.display = null;
+    sessionStorage.setItem("ModalClosed", true);
+}
+
+function SendModalData(){
+    const confirmation = document.querySelector(".modal__content__confirmation");
+    const visualElement = document.getElementById("modal-input");
+    const email = visualElement.value;
+
+    if(regrex.test(email)){
+        visualElement.style.border = null;
+        confirmation.style.visibility = "visible";
+
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify({
+                newsletterEmail: email,
+            }),
+            headers: { 'Content-type': 'application/json; charset=UTF-8', },
+        })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+    }
+    else{ 
+        visualElement.style.border = "1px solid red"; 
+        confirmation.style.visibility = null;
+        console.log("INVALID data"); 
+    }
 }
