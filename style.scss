@@ -23,10 +23,11 @@
         margin-top: 50px;
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
 
         &__return-button{
-            padding: 1.65em 6em;
+            margin-right: 5%;
+            padding: 1.3em 6.8%;
             border: none;
             border-radius: 5em;
             box-shadow: 5px 10px 14px #07ACE64A;

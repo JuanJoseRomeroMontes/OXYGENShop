@@ -1089,10 +1089,11 @@
   margin-top: 50px;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 .main__button-container__return-button {
-  padding: 1.65em 6em;
+  margin-right: 5%;
+  padding: 1.3em 6.8%;
   border: none;
   border-radius: 5em;
   box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.2901960784);

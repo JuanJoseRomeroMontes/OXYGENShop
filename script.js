@@ -1,7 +1,5 @@
 const maxHeight = document.body.offsetHeight-window.innerHeight;
-
 const barFill = document.querySelector(".nav__percentage-scroller");
-
 const regrex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 // Changes the size of the percentage scroller when the user scrolls
@@ -9,11 +7,14 @@ document.addEventListener("scroll", function ScrollBar() {
     let actualHeight = window.scrollY;
     let percentage = (actualHeight/maxHeight)*100;
     barFill.style.width = percentage+"%";
-    if(percentage >= 25)
-    { ShowNewsletterModal(); }
+    if(percentage >= 25) { 
+        ShowNewsletterModal(); 
+    }
 });
 
 //-------------
+
+document.querySelector(".main__button-container__return-button").addEventListener("click", ReturnTop);
 
 function ReturnTop(){
     setTimeout(() => {
@@ -22,6 +23,8 @@ function ReturnTop(){
 }
 
 //-------------
+
+document.querySelector(".main__contact__form__send__rounded-button").addEventListener("click", SendFormularyData);
 
 function SendFormularyData(){
     //Visual elements wich borders have to be set to red.
@@ -37,22 +40,12 @@ function SendFormularyData(){
 
     if(validData)
     { 
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'POST',
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                checkbox: checkbox,
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8', 
-            },
-        })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
+        PostFormularyData(name, email, checkbox);
     }
     else
-    { console.log("INVALID data"); }
+    { 
+        console.log("INVALID data"); 
+    }
 }
 
 function ValidateFormularyData(name, email, checkbox, visualElements){
@@ -79,42 +72,50 @@ function ValidateFormularyData(name, email, checkbox, visualElements){
     return value;
 }
 
+async function PostFormularyData(name, email, checkbox){
+    try{
+        const response = fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            checkbox: checkbox,
+        }),
+        headers: { 'Content-type': 'application/json; charset=UTF-8', },
+        })
+
+        if(response.ok){
+            const jsonResponse = await response.json();
+            console.log(jsonResponse)
+        }
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
 //-------------
 
 const newsletterModal = document.getElementById("Newsletter"); 
 const confirmation = document.querySelector("modal__content__confirmation");
 
-document.querySelector(".modal__content__close").addEventListener("click", CloseNewsletterModal);
-
-document.addEventListener("onclick", (event) => {
-    if (event.target == newsletterModal) {
-        CloseNewsletterModal();
-    }
-})
-
-document.addEventListener("onload", () => {
+window.addEventListener("load", () => {
     setTimeout(() => {
         ShowNewsletterModal();
     }, 5000);
 });
-/*
-window.onload = function(){
-    setTimeout(() => {
-        ShowNewsletterModal();
-    }, 5000);
-}*/
+
+document.querySelector(".modal__content__close").addEventListener("click", CloseNewsletterModal);
 
 //Register a click and closes window if its in the modal (the modal it's the grey part)
-document.addEventListener("onclick", (event) => {
+document.addEventListener("click", function ModalClickClose(event) {
     if (event.target == newsletterModal) {
         CloseNewsletterModal();
     }
 })
 
-//DEBUG no funciona
-document.addEventListener("keydown", (key) => {
-    console.log(`pressed key`);
-    if(key.key == "Escape") {
+document.addEventListener("click", function EscapePressClose(event) {
+    if(event.key == "Escape") {
         CloseNewsletterModal(); 
     }
 });
@@ -122,8 +123,9 @@ document.addEventListener("keydown", (key) => {
 document.querySelector(".modal__content__button").addEventListener("click", SendModalData);
 
 function ShowNewsletterModal(){
-    if(!sessionStorage.getItem("ModalClosed"))
-    { newsletterModal.style.display = "block"; }
+    if(!sessionStorage.getItem("ModalClosed")) { 
+        newsletterModal.style.display = "block"; 
+    }
 }
 
 function CloseNewsletterModal(){
@@ -140,19 +142,31 @@ function SendModalData(){
         visualElement.style.border = null;
         confirmation.style.visibility = "visible";
 
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'POST',
-            body: JSON.stringify({
-                newsletterEmail: email,
-            }),
-            headers: { 'Content-type': 'application/json; charset=UTF-8', },
-        })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
+        PostEmail(email);
     }
     else{ 
         visualElement.style.border = "1px solid red"; 
         confirmation.style.visibility = null;
         console.log("INVALID data"); 
+    }
+}
+
+async function PostEmail(email){
+    try{
+        const response = fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+            newsletterEmail: email,
+        }),
+        headers: { 'Content-type': 'application/json; charset=UTF-8', },
+        })
+
+        if(response.ok){
+            const jsonResponse = await response.json();
+            console.log(jsonResponse)
+        }
+    }
+    catch(error){
+        console.log(error);
     }
 }
