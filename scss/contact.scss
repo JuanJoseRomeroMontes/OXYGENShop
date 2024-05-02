@@ -77,18 +77,18 @@
                     & input{
                         display: none;
 
-                        &:checked ~ span{
+                        &:checked ~ .main__contact__form__send__checkbox__border{
                             background-image: url(img/Checkbox_check.svg);
                             background-repeat: no-repeat;
                             background-position: center;
                         }
     
-                        &:checked ~ span:after{
+                        &:checked ~ .main__contact__form__send__checkbox__border:after{
                             opacity: 1;
                         }
                     }
 
-                    & span{
+                    &__border{
                         display: inline-block;
                         position: relative;
                         width: 1.5rem;

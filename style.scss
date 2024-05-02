@@ -5,7 +5,7 @@
 @import 'scss/pricing.scss';
 @import 'scss/contact.scss';
 @import 'scss/footer.scss';
- 
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -61,7 +61,7 @@ body {
 .green-text{
     color: var(--green-color);
 }
-
+ 
 .blue-border{
     border: 1.5px solid var(--blue-color);
 }
