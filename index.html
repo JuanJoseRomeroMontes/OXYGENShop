@@ -5,6 +5,7 @@
     <title>OXYGENShop</title>
     <link rel="stylesheet" href="style.css" type="text/css" >
     <script defer src="js/currency.js"></script>
+    <script defer src="js/hamburguerMenu.js"></script>
     <script defer src="js/script.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,19 +22,27 @@
             <h2 class="nav__logo__text blue-text">OXYGENShop</h2>
         </div>
         
-        <img class="nav__menu" src="img/Menu.svg" alt="">
+        <img class="nav__menu" src="" alt="" id="MenuButton">
+
+        <div class="nav__mobile-menu nav__mobile-menu-hidden" id="HamburguerMenu">
+            <a href="#WhyUs" class="nav__mobile-menu__option">Why Us</a>
+            <a href="#Benefits" class="nav__mobile-menu__option">Benefits</a>
+            <a href="#Prices" class="nav__mobile-menu__option">Prices</a>
+            <a href="#Contact" class="nav__mobile-menu__option">Contact</a>
+        </div>
+
         <div class="nav__desktop-menu">
-            <div class="nav__desktop-menu__selected-option">
-                <p class="nav__desktop-menu__selected-option__text">Why us</p>
+            <div class="nav__desktop-menu__option">
+                <a href="#WhyUs" class="nav__desktop-menu__option__text">Why us</a>
             </div>
             <div class="nav__desktop-menu__option">
-                <p class="nav__desktop-menu__option__text">Benefits</p>
+                <a href="#Benefits"  class="nav__desktop-menu__option__text">Benefits</a>
             </div>
             <div class="nav__desktop-menu__option">
-                <p class="nav__desktop-menu__option__text">Prices</p>
+                <a href="#Prices" class="nav__desktop-menu__option__text">Prices</a>
             </div>
             <div class="nav__desktop-menu__option">
-                <p class="nav__desktop-menu__option__text">Contact</p>
+                <a href="#Contact" class="nav__desktop-menu__option__text">Contact</a>
             </div>
         </div>
     </nav>
@@ -64,7 +73,7 @@
                 <img class="main__header__image-box__image" src="img/Background.png" alt="">
             </article>
 
-            <article class="main__header__stat-column">
+            <article class="main__header__stat-column" id="WhyUs">
                 <h2 class="main__header__stat-column__title">The most popular sales platform in country</h2>
 
                 <div class="main__header__stat-column__entries">
@@ -90,7 +99,7 @@
             </article>
         </header>
 
-        <section class="main__selling-points">
+        <section class="main__selling-points" id="Benefits">
             <article class="main__selling-points__selling-point-1">
                 <div class="main__selling-points__selling-point-1__image">
                     <img src="img/Macbook.png" class="main__selling-points__selling-point-1__image__foreground" alt="">
@@ -128,7 +137,7 @@
             </article>
         </section>
 
-        <section class="main__pricing">
+        <section class="main__pricing" id="Prices">
             <h1 class="main__pricing__title">Pricing</h1>
 
             <article class="main__pricing__currency-selector">
@@ -263,7 +272,7 @@
             </article>
         </section>
 
-        <section class="main__contact">
+        <section class="main__contact" id="Contact">
             <article class="main__contact__info">
                 <h2 class="main__contact__info__title">Any questions?</h2>
 

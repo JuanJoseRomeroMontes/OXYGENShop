@@ -1,6 +1,9 @@
 .nav {
-  height: 4em;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2901960784);
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  top: 0;
 }
 .nav__percentage-scroller {
   background-color: red;
@@ -21,10 +24,46 @@
 .nav__logo__text {
   font-size: 2rem;
   font-weight: 300;
+  margin-bottom: 5%;
 }
 .nav__menu {
   display: inline-block;
+  width: 1rem;
+  height: 1rem;
   margin-bottom: 1.5%;
+  background: url(img/Menu-Hamburguer.svg) no-repeat;
+}
+.nav__menu-closed {
+  background: url(img/Menu-X.svg) no-repeat;
+}
+.nav__mobile-menu {
+  height: 11em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 4% 7%;
+}
+.nav__mobile-menu__option {
+  font-size: 0.688rem;
+  font-weight: 700;
+  line-height: 0.938rem;
+  letter-spacing: 0.205rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #A5A5A5;
+}
+.nav__mobile-menu__option:active {
+  color: black;
+  font-weight: 900;
+}
+.nav__mobile-menu__option:focus {
+  color: black;
+  font-weight: 900;
+}
+.nav__mobile-menu-hidden {
+  display: none;
 }
 .nav__desktop-menu {
   display: none;
@@ -34,6 +73,7 @@
   .nav {
     display: flex;
     justify-content: space-around;
+    height: 4em;
   }
   .nav__logo {
     margin-top: 0;
@@ -41,6 +81,9 @@
     width: 40%;
     display: flex;
     align-items: center;
+  }
+  .nav__logo__text {
+    margin-bottom: 0;
   }
   .nav__menu {
     display: none;
@@ -62,21 +105,17 @@
     font-weight: bold;
     text-align: center;
     letter-spacing: 0.2rem;
+    text-decoration: none;
     color: #A5A5A5;
   }
-  .nav__desktop-menu__selected-option {
+  .nav__desktop-menu__option:hover {
+    cursor: pointer;
     display: flex;
     align-items: center;
     border-bottom: 4px solid #08A6E4;
     height: 100%;
   }
-  .nav__desktop-menu__selected-option__text {
-    font-size: 0.688rem;
-    line-height: 0.938rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
-    letter-spacing: 0.2rem;
+  .nav__desktop-menu__option:hover .nav__desktop-menu__option__text {
     color: black;
   }
 }
@@ -1105,7 +1144,7 @@
 }
 
 .main {
-  margin-top: 100px;
+  margin-top: 11.25rem;
 }
 .main__button-container {
   margin-top: 50px;
