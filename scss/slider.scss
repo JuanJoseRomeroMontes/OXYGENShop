@@ -1,6 +1,6 @@
 .main{
     &__slider{
-        margin: 5% 1em;
+        margin: 5% 10em;
 
         &__view{
             position: relative;
@@ -31,7 +31,7 @@
                     transform: scaleX(-1);
                 }
     
-                &__circle-container{
+                &__tracker{
                     position: absolute;
                     bottom: 2%;
                     left: 44.5%;

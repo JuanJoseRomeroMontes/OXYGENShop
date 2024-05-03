@@ -903,7 +903,7 @@
   }
 }
 .main__slider {
-  margin: 5% 1em;
+  margin: 5% 10em;
 }
 .main__slider__view {
   position: relative;
@@ -932,7 +932,7 @@
   opacity: 0.5;
   transform: scaleX(-1);
 }
-.main__slider__view__UI__circle-container {
+.main__slider__view__UI__tracker {
   position: absolute;
   bottom: 2%;
   left: 44.5%;
@@ -941,13 +941,13 @@
   display: flex;
   justify-content: space-between;
 }
-.main__slider__view__UI__circle-container__circle {
+.main__slider__view__UI__tracker__circle {
   background-color: #bbbbbb;
   width: 15%;
   height: 100%;
   border-radius: 100%;
 }
-.main__slider__view__UI__circle-container__current-circle {
+.main__slider__view__UI__tracker__current-circle {
   background-color: white;
 }
 .main__slider__view__content {

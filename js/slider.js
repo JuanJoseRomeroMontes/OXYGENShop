@@ -1,25 +1,21 @@
 class Slider{
     constructor(idSlider){
         this.slider = document.getElementById(idSlider);
-        this.tracker = this.slider.childNodes[1];
-        this.images = this.slider.childNodes[3];
+        this.trackerList = this.slider.querySelector(".main__slider__view__UI").querySelector(".main__slider__view__UI__tracker").querySelectorAll(".main__slider__view__UI__tracker__circle");
+        this.imagesContainer = this.slider.querySelector(".main__slider__view__content");
+        this.imagesList = this.slider.querySelector(".main__slider__view__content").querySelectorAll(".main__slider__view__content__image");
         this.iterator = 0;
         this.previousIterator = 0;
-        //console.log(` Slider: ${this.slider} \n Tracker: ${this.tracker} \n Images: ${this.images} \n Iterator: ${this.iterator} \n previousIteractor: ${this.previousIterator} `);
     }
 
     advance() {
         this.previousIterator = this.iterator;
         this.iterator++;
-        console.log(`Iterator: ${this.iterator} \n previousIteractor: ${this.previousIterator} `)
-
-        console.log(this);
-        console.log(images);
-        console.log(this.slider)
         
-        
-        if(this.iterator > this.images.length)
+        if(this.iterator > this.imagesList.length-1)
             this.iterator = 0;
+
+        console.log(`Current iterator: ${this.iterator} | Previous iterator: ${this.previousIterator}`);
 
         this.changeDisplay();
     }
@@ -27,24 +23,32 @@ class Slider{
     retreat() {
         this.previousIterator = this.iterator;
         this.iterator--;
-        console.log(`Iterator: ${this.iterator} \n previousIteractor: ${this.previousIterator} `)
-        console.log(this.images.length)
+        
         if(this.iterator < 0)
-            this.iterator = this.images.length;
+            this.iterator = this.imagesList.length-1;
 
         this.changeDisplay();
     }
 
     changeDisplay(){
-        this.images.style.transform = `translateX(${this.iterator * -100}%)`;
+        this.imagesContainer.style.transform = `translateX(${this.iterator * -100}%)`;
 
-        this.tracker[previousIterator].classList.toggle("main__slider__view__UI__circle-container__current-circle");
-        this.tracker[iterator].classList.toggle("main__slider__view__UI__circle-container__current-circle");
+        this.trackerList[this.previousIterator].classList.toggle("main__slider__view__UI__tracker__current-circle");
+        this.trackerList[this.iterator].classList.toggle("main__slider__view__UI__tracker__current-circle");
     }
 }
 
 const slider = new Slider("slider");
-console.log(slider.slider);
-/*document.getElementById("sliderLeftArrow").addEventListener("click", slider.retreat);
-document.getElementById("sliderRightArrow").addEventListener("click", slider.advance);
-setInterval(slider.advance, 5000);*/
+
+document.getElementById("sliderRightArrow").addEventListener("click", function callAdvance() {
+     slider.advance() 
+    });
+
+document.getElementById("sliderLeftArrow").addEventListener("click", function callAdvance() {
+    slider.retreat() 
+   });
+
+setInterval(function callAdvance() {
+    slider.advance() 
+   }, 
+   5000);
