@@ -1,6 +1,19 @@
 .nav {
-  height: 4em;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2901960784);
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  top: 0;
+}
+.nav__percentage-scroller {
+  background-color: red;
+  width: 0%;
+  height: 2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width linear 0.3s;
+  z-index: 999;
 }
 .nav__logo {
   display: inline-block;
@@ -11,10 +24,46 @@
 .nav__logo__text {
   font-size: 2rem;
   font-weight: 300;
+  margin-bottom: 5%;
 }
 .nav__menu {
   display: inline-block;
+  width: 1rem;
+  height: 1rem;
   margin-bottom: 1.5%;
+  background: url(img/Menu-Hamburguer.svg) no-repeat;
+}
+.nav__menu-closed {
+  background: url(img/Menu-X.svg) no-repeat;
+}
+.nav__mobile-menu {
+  height: 11em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 4% 7%;
+}
+.nav__mobile-menu__option {
+  font-size: 0.688rem;
+  font-weight: 700;
+  line-height: 0.938rem;
+  letter-spacing: 0.205rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #A5A5A5;
+}
+.nav__mobile-menu__option:active {
+  color: black;
+  font-weight: 900;
+}
+.nav__mobile-menu__option:focus {
+  color: black;
+  font-weight: 900;
+}
+.nav__mobile-menu-hidden {
+  display: none;
 }
 .nav__desktop-menu {
   display: none;
@@ -24,6 +73,7 @@
   .nav {
     display: flex;
     justify-content: space-around;
+    height: 4em;
   }
   .nav__logo {
     margin-top: 0;
@@ -31,6 +81,9 @@
     width: 40%;
     display: flex;
     align-items: center;
+  }
+  .nav__logo__text {
+    margin-bottom: 0;
   }
   .nav__menu {
     display: none;
@@ -52,24 +105,92 @@
     font-weight: bold;
     text-align: center;
     letter-spacing: 0.2rem;
+    text-decoration: none;
     color: #A5A5A5;
   }
-  .nav__desktop-menu__selected-option {
+  .nav__desktop-menu__option:hover {
+    cursor: pointer;
     display: flex;
     align-items: center;
     border-bottom: 4px solid #08A6E4;
     height: 100%;
   }
-  .nav__desktop-menu__selected-option__text {
-    font-size: 0.688rem;
-    line-height: 0.938rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
-    letter-spacing: 0.2rem;
+  .nav__desktop-menu__option:hover .nav__desktop-menu__option__text {
     color: black;
   }
 }
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9;
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal__content {
+  background-color: white;
+  margin: auto;
+  padding: 1.5% 2.5%;
+  width: 80%;
+  height: 30%;
+  border-radius: 0.7em;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+  align-items: flex-end;
+}
+.modal__content__close {
+  text-align: right;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  align-self: flex-start;
+  border: none;
+  background: transparent;
+}
+.modal__content__close:hover, .modal__content__close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal__content__title {
+  margin-top: 1.5%;
+  width: 98%;
+  font-size: 2rem;
+}
+.modal__content__input-label {
+  margin-right: 1%;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.modal__content__input {
+  width: 50%;
+  margin-right: 20%;
+  border: none;
+  border-bottom: 1px solid #95989A;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.modal__content__button {
+  padding: 1% 2%;
+  border: none;
+  border-radius: 5em;
+  box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.2901960784);
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+}
+.modal__content__confirmation {
+  visibility: hidden;
+  width: 100%;
+}
+
 .main {
   margin-top: 100px;
 }
@@ -631,6 +752,21 @@
   line-height: 2.64rem;
   text-align: center;
 }
+.main__pricing__currency-selector {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 10%;
+}
+.main__pricing__currency-selector__container__input {
+  scale: 1.2;
+}
+.main__pricing__currency-selector__container__text {
+  font-size: 1.125rem;
+  line-height: 1.36rem;
+  font-weight: 500;
+  text-align: left;
+}
 .main__pricing__article {
   width: 80%;
   height: 15.7em;
@@ -656,6 +792,10 @@
   font-weight: 300;
   font-size: 2.875rem;
   line-height: 4rem;
+  text-align: center;
+  position: relative;
+  left: -0.2em;
+  width: 120%;
 }
 .main__pricing__article__price__offer {
   font-weight: 700;
@@ -710,7 +850,10 @@
   }
   .main__pricing__title {
     width: 100%;
-    margin-bottom: 5%;
+  }
+  .main__pricing__currency-selector {
+    margin-top: 3%;
+    margin-bottom: 3%;
   }
   .main__pricing__article {
     width: 28%;
@@ -759,6 +902,65 @@
     box-shadow: 5px 10px 27px 0px rgba(70, 71, 71, 0.2901960784);
   }
 }
+.main__slider {
+  margin: 5% 10em;
+}
+.main__slider__view {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  align-items: center;
+}
+.main__slider__view__UI {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.main__slider__view__UI__left-arrow {
+  position: absolute;
+  left: 1%;
+  top: 45%;
+  width: 4%;
+  opacity: 0.5;
+}
+.main__slider__view__UI__right-arrow {
+  position: absolute;
+  right: 1%;
+  top: 45%;
+  width: 4%;
+  opacity: 0.5;
+  transform: scaleX(-1);
+}
+.main__slider__view__UI__tracker {
+  position: absolute;
+  bottom: 2%;
+  left: 44.5%;
+  width: 11%;
+  height: 3%;
+  display: flex;
+  justify-content: space-between;
+}
+.main__slider__view__UI__tracker__circle {
+  background-color: #bbbbbb;
+  width: 15%;
+  height: 100%;
+  border-radius: 100%;
+}
+.main__slider__view__UI__tracker__current-circle {
+  background-color: white;
+}
+.main__slider__view__content {
+  display: flex;
+  transition: all 0.3s ease-in;
+}
+.main__slider__view__content__image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .main__contact {
   margin-top: 75px;
 }
@@ -820,18 +1022,27 @@
   margin-top: 25px;
 }
 .main__contact__form__send__checkbox {
-  display: inline-block;
-  vertical-align: top;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 1px solid #95989A;
-  border-radius: 4px;
+  cursor: pointer;
+}
+.main__contact__form__send__checkbox input {
+  display: none;
+}
+.main__contact__form__send__checkbox input:checked ~ .main__contact__form__send__checkbox__border {
   background-image: url(img/Checkbox_check.svg);
   background-repeat: no-repeat;
   background-position: center;
+}
+.main__contact__form__send__checkbox input:checked ~ .main__contact__form__send__checkbox__border:after {
+  opacity: 1;
+}
+.main__contact__form__send__checkbox__border {
+  display: inline-block;
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: white;
+  border: 1px solid #95989A;
+  border-radius: 4px;
 }
 .main__contact__form__send__text {
   display: inline-block;
@@ -992,7 +1203,30 @@
 }
 
 .main {
-  margin-top: 100px;
+  margin-top: 11.25rem;
+}
+.main__button-container {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.main__button-container__return-button {
+  margin-right: 5%;
+  padding: 1.3em 6.8%;
+  border: none;
+  border-radius: 5em;
+  box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.2901960784);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.106rem;
+  text-align: center;
+  transition: scale 2s;
+}
+.main__button-container__return-button:hover {
+  cursor: pointer;
+  scale: 1.1;
 }
 
 body {

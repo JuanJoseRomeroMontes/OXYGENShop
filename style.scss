@@ -1,10 +1,12 @@
 @import 'scss/nav.scss';
+@import 'scss/modal.scss';
 @import 'scss/header.scss';
 @import 'scss/selling-points.scss';
 @import 'scss/pricing.scss';
+@import 'scss/slider.scss';
 @import 'scss/contact.scss';
 @import 'scss/footer.scss';
-
+ 
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,10 +15,36 @@
     --blue-color: #08A6E4;
     --green-color: #55DFB4;
     font-family: Raleway, OpenSans;
-}
+} 
 
 .main{
-    margin-top: 100px;
+    margin-top: 11.25rem;
+
+    &__button-container{
+        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        &__return-button{
+            margin-right: 5%;
+            padding: 1.3em 6.8%;
+            border: none;
+            border-radius: 5em;
+            box-shadow: 5px 10px 14px #07ACE64A;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.106rem;
+            text-align: center;
+            transition: scale 2s;
+        }
+
+        &__return-button:hover{
+            cursor: pointer;
+            scale: 1.1;
+        }
+    }
 }
 
 body {
@@ -34,7 +62,7 @@ body {
 .green-text{
     color: var(--green-color);
 }
-
+ 
 .blue-border{
     border: 1.5px solid var(--blue-color);
 }

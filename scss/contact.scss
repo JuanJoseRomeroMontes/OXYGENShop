@@ -1,11 +1,9 @@
 .main{
-
     &__contact{
         margin-top: 75px;
 
         &__info{
             padding: 0 5%;
-            
 
             &__title{
                 font-weight: 400;
@@ -74,16 +72,31 @@
                 margin-top: 25px;
     
                 &__checkbox{
-                    display: inline-block;
-                    vertical-align: top;
-                    appearance: none;
-                    width: 1.5rem;
-                    height: 1.5rem;
-                    border: 1px solid #95989A;
-                    border-radius: 4px;
-                    background-image: url(img/Checkbox_check.svg);
-                    background-repeat: no-repeat;
-                    background-position: center;
+                    cursor: pointer;
+
+                    & input{
+                        display: none;
+
+                        &:checked ~ .main__contact__form__send__checkbox__border{
+                            background-image: url(img/Checkbox_check.svg);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                        }
+    
+                        &:checked ~ .main__contact__form__send__checkbox__border:after{
+                            opacity: 1;
+                        }
+                    }
+
+                    &__border{
+                        display: inline-block;
+                        position: relative;
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        background: white;
+                        border: 1px solid #95989A;
+                        border-radius: 4px;
+                    }
                 }
     
                 &__text{
@@ -118,7 +131,6 @@
 
 @media only screen and (min-width: 1000px) {
     .main{
-
         &__contact{
             width: 60%;
             height: 375px;

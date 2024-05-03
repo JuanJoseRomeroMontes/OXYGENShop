@@ -1,0 +1,69 @@
+.main{
+    &__slider{
+        margin: 5% 10em;
+
+        &__view{
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            align-items: center;
+
+            &__UI{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+
+                &__left-arrow{
+                    position: absolute;
+                    left: 1%;
+                    top: 45%;
+                    width: 4%;
+                    opacity: 0.5;
+                }
+    
+                &__right-arrow{
+                    position: absolute;
+                    right: 1%;
+                    top: 45%;
+                    width: 4%;
+                    opacity: 0.5;
+                    transform: scaleX(-1);
+                }
+    
+                &__tracker{
+                    position: absolute;
+                    bottom: 2%;
+                    left: 44.5%;
+                    width: 11%;
+                    height: 3%;
+                    display: flex;
+                    justify-content: space-between;
+    
+                    &__circle{
+                        background-color: #bbbbbb;
+                        width: 15%;
+                        height: 100%;
+                        border-radius: 100%;
+                    }
+    
+                    &__current-circle{
+                        background-color: white;
+                    }
+                }
+            }
+    
+            &__content{
+                display: flex;
+                transition: all 0.3s ease-in;
+                
+                &__image{
+                    width: 100%;
+                    //Se encarga de que las imagenes no aparezcan deformes
+                    aspect-ratio: 16/9;
+                    object-fit: cover;
+                }
+            }
+        } 
+    }
+}
