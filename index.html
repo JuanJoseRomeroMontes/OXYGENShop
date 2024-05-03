@@ -1,289 +1,363 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>OXYGENShop</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <script defer src="js/hamburguerMenu.js"></script>
+    <script defer src="js/currency.js"></script>
+    <script defer src="js/slider.js"></script>
+    <script defer src="js/formulary.js"></script>
+    <script defer src="js/returnButtom.js"></script>
+    <script defer src="js/popUp.js"></script> <!--PopUp must be loaded AFTER formulary-->
+    <script defer src="js/percentageScroller.js"></script> <!--PopUp must be loaded AFTER popUp-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header class="header">
-        <div class="header--logo">
-            <h2 class="header--logo--text blue-text">OXYGENShop</h2>
+    <nav class="nav">
+        <div class="nav__percentage-scroller"></div>
+
+        <div class="nav__logo">
+            <h2 class="nav__logo__text blue-text">OXYGENShop</h2>
         </div>
         
-        <img class="header--menu" src="img/Menu.svg">
-        <div class="header--desktop-menu">
-            <div class="header--desktop-menu--selected-option">
-                <p class="header--desktop-menu--selected-option--text">Why us</p>
+        <img class="nav__menu" src="" alt="" id="MenuButton">
+
+        <div class="nav__mobile-menu nav__mobile-menu-hidden" id="HamburguerMenu">
+            <a href="#WhyUs" class="nav__mobile-menu__option">Why Us</a>
+            <a href="#Benefits" class="nav__mobile-menu__option">Benefits</a>
+            <a href="#Prices" class="nav__mobile-menu__option">Prices</a>
+            <a href="#Contact" class="nav__mobile-menu__option">Contact</a>
+        </div>
+
+        <div class="nav__desktop-menu">
+            <div class="nav__desktop-menu__option">
+                <a href="#WhyUs" class="nav__desktop-menu__option__text">Why us</a>
             </div>
-            <div class="header--desktop-menu--option">
-                <p class="header--desktop-menu--option--text">Benefits</p>
+            <div class="nav__desktop-menu__option">
+                <a href="#Benefits"  class="nav__desktop-menu__option__text">Benefits</a>
             </div>
-            <div class="header--desktop-menu--option">
-                <p class="header--desktop-menu--option--text">Prices</p>
+            <div class="nav__desktop-menu__option">
+                <a href="#Prices" class="nav__desktop-menu__option__text">Prices</a>
             </div>
-            <div class="header--desktop-menu--option">
-                <p class="header--desktop-menu--option--text">Contact</p>
+            <div class="nav__desktop-menu__option">
+                <a href="#Contact" class="nav__desktop-menu__option__text">Contact</a>
             </div>
         </div>
-    </header>
+    </nav>
+
+    <div class="modal" id="Newsletter">
+        <div class="modal__content blue-border">
+            <h2 class="modal__content__title">Subscribe to our newsletter</h2>
+            <button class="modal__content__close">x</button>
+            <label for="modal-input" class="modal__content__input-label">Email:</label>
+            <input id="modal-input" type="text" class="modal__content__input">
+            <button class="modal__content__button blue-background">Subscribe!</button>
+            <h4 class="modal__content__confirmation">Your subscription was succesfull, thank you for joining us!</h4>
+        </div>
+    </div>
 
     <main class="main">
-        <article class="main--introduction">
-            <section class="main--introduction--opening">
-                <h1 class="main--introduction--opening--title">Sell More!</h1>
-                <h4 class="main--introduction--opening--subtitle">Open shop on our platform and increase your sales</h4>
+        <header class="main__header">
+            <article class="main__header__opening">
+                <h2 class="main__header__opening__title">Sell More!</h2>
+                <h4 class="main__header__opening__subtitle">Open shop on our platform and increase your sales</h4>
                 
-                <button class="main--introduction--opening--button blue-background" type="button"> 
-                    <p class="main--introduction--opening--button--text">Open your shop</p> 
+                <button class="main__header__opening__button blue-background" type="button"> 
+                    Open your shop
                 </button>
-            </section>
+            </article>
             
-            <section class="main--introduction--image-box">
-                <img class="main--introduction--image-box--image" src="img/Background.png">
-            </section>
+            <article class="main__header__image-box">
+                <img class="main__header__image-box__image" src="img/Background.png" alt="">
+            </article>
 
-            <section class="main--introduction--stat-column">
-                <h1 class="main--introduction--stat-column--title">The most popular sales platform in country</h1>
+            <article class="main__header__stat-column" id="WhyUs">
+                <h2 class="main__header__stat-column__title">The most popular sales platform in country</h2>
 
-                <div class="main--introduction--stat-column--entries">
-                    <img src="img/Red-circle.svg" class="main--introduction--stat-column--entries--image-background">
-                    <img src="img/Person.svg" class="main--introduction--stat-column--entries--image-foreground">
-                    <h4 class="main--introduction--stat-column--entries--number">100000+</h4>
-                    <h5 class="main--introduction--stat-column--entries--stat">daily entries</h5>
+                <div class="main__header__stat-column__entries">
+                    <img src="img/Red-circle.svg" class="main__header__stat-column__entries__image-background" alt="">
+                    <img src="img/Person.svg" class="main__header__stat-column__entries__image-foreground" alt="">
+                    <h4 class="main__header__stat-column__entries__number">100000+</h4>
+                    <h5 class="main__header__stat-column__entries__stat">daily entries</h5>
                 </div>
 
-                <div class="main--introduction--stat-column--products">
-                    <img src="img/Blue-circle.svg" class="main--introduction--stat-column--products--image-background">
-                    <img src="img/Eye.svg" class="main--introduction--stat-column--products--image-foreground">
-                    <h4 class="main--introduction--stat-column--products--number">2000000+</h4>
-                    <h5 class="main--introduction--stat-column--products--stat">seen products every day</h5>
+                <div class="main__header__stat-column__products">
+                    <img src="img/Blue-circle.svg" class="main__header__stat-column__products__image-background" alt="">
+                    <img src="img/Eye.svg" class="main__header__stat-column__products__image-foreground" alt="">
+                    <h4 class="main__header__stat-column__products__number">2000000+</h4>
+                    <h5 class="main__header__stat-column__products__stat">seen products every day</h5>
                 </div>
 
-                <div class="main--introduction--stat-column--post">
-                    <img src="img/Green-circle.svg" class="main--introduction--stat-column--post--image-background">
-                    <img src="img/Catalog.svg" class="main--introduction--stat-column--post--image-foreground">
-                    <h4 class="main--introduction--stat-column--post--number">10000+</h4>
-                    <h5 class="main--introduction--stat-column--post--stat">added posts daily</h5>
+                <div class="main__header__stat-column__post">
+                    <img src="img/Green-circle.svg" class="main__header__stat-column__post__image-background" alt="">
+                    <img src="img/Catalog.svg" class="main__header__stat-column__post__image-foreground" alt="">
+                    <h4 class="main__header__stat-column__post__number">10000+</h4>
+                    <h5 class="main__header__stat-column__post__stat">added posts daily</h5>
                 </div>
-            </section>
-        </article>
+            </article>
+        </header>
 
-        <article class="main--selling-points">
-            <section class="main--selling-points--section1">
-                <div class="main--selling-points--section1--image">
-                    <img src="img/Macbook.png" class="main--selling-points--section1--image--foreground">
-                    <img src="img/Red-frame.svg" class="main--selling-points--section1--image--background">
+        <section class="main__selling-points" id="Benefits">
+            <article class="main__selling-points__selling-point-1">
+                <div class="main__selling-points__selling-point-1__image">
+                    <img src="img/Macbook.png" class="main__selling-points__selling-point-1__image__foreground" alt="">
+                    <img src="img/Red-frame.svg" class="main__selling-points__selling-point-1__image__background" alt="">
                 </div>
-                <div class="main--selling-points--section1--text">
-                    <h3 class="main--selling-points--section1--text--title">Be always first</h3>
-                    <h6 class="main--selling-points--section1--text--paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h6>
-                    <img src="img/Red-line.svg" class="main--selling-points--section1--text--line">
+                <div class="main__selling-points__selling-point-1__text">
+                    <h3 class="main__selling-points__selling-point-1__text__title">Be always first</h3>
+                    <h6 class="main__selling-points__selling-point-1__text__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod sectionor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h6>
+                    <img src="img/Red-line.svg" class="main__selling-points__selling-point-1__text__line" alt="">
                 </div>
-            </section>
+            </article>
 
-            <section class="main--selling-points--section2">
-                <div class="main--selling-points--section2--image">
-                    <img src="img/iPhone.png" class="main--selling-points--section2--image--foreground">
-                    <img src="img/Blue-circle.svg" class="main--selling-points--section2--image--background">
-                </div>
-
-                <div class="main--selling-points--section2--text">
-                    <h3 class="main--selling-points--section2--text--title">Your shop is where you are!</h3>
-                    <h6 class="main--selling-points--section2--text--paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h6>
-                    <img src="img/Blue-line.svg" class="main--selling-points--section2--text--line">
-                </div>
-            </section>
-
-            <section class="main--selling-points--section3">
-                <div class="main--selling-points--section3--text">
-                    <h3 class="main--selling-points--section3--text--title">Increase recognition your brand!</h3>
-                    <h6 class="main--selling-points--section3--text--paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h6>
-                    <img src="img/Green-line.svg" class="main--selling-points--section3--text--line">
-                </div>
-            </section>
-            <section class="main--selling-points--section3--image green-background">
-                <img src="img/Trumpet.png" class="main--selling-points--section3--image--foreground">
-            </section>
-        </article>
-
-        <article class="main--pricing">
-            <h1 class="main--pricing--title">Pricing</h1>
-
-            <section class="main--pricing--section red-border">
-                <div class="main--pricing--section--price">
-                    <h3 class="main--pricing--section--price--title main--pricing--section--price--extra-padding-top">Basic</h3>
-                    <h1 class="main--pricing--section--price--cost red-text open-sans">$0</h1>
+            <article class="main__selling-points__selling-point-2">
+                <div class="main__selling-points__selling-point-2__image">
+                    <img src="img/iPhone.png" class="main__selling-points__selling-point-2__image__foreground" alt="">
+                    <img src="img/Blue-circle.svg" class="main__selling-points__selling-point-2__image__background" alt="">
                 </div>
 
-                <div class="main--pricing--section--feature-list">
-                    <div class="main--pricing--section--feature-list--feature">
-                        <img src="img/Checkbox.svg" class="main--pricing--section--feature-list--feature--img" >
-                        <h5 class="main--pricing--section--feature-list--feature--text">100 MB HDD</h5>
+                <div class="main__selling-points__selling-point-2__text">
+                    <h3 class="main__selling-points__selling-point-2__text__title">Your shop is where you are!</h3>
+                    <h6 class="main__selling-points__selling-point-2__text__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod sectionor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h6>
+                    <img src="img/Blue-line.svg" class="main__selling-points__selling-point-2__text__line" alt="">
+                </div>
+            </article>
+
+            <article class="main__selling-points__selling-point-3">
+                <div class="main__selling-points__selling-point-3__text">
+                    <h3 class="main__selling-points__selling-point-3__text__title">Increase recognition your brand!</h3>
+                    <h6 class="main__selling-points__selling-point-3__text__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod sectionor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h6>
+                    <img src="img/Green-line.svg" class="main__selling-points__selling-point-3__text__line" alt="">
+                </div>
+            </article>
+            <article class="main__selling-points__selling-point-3__image green-background">
+                <img src="img/Trumpet.png" class="main__selling-points__selling-point-3__image__foreground" alt="">
+            </article>
+        </section>
+
+        <section class="main__pricing" id="Prices">
+            <h1 class="main__pricing__title">Pricing</h1>
+
+            <article class="main__pricing__currency-selector">
+                <div class="main__pricing__currency-selector__container">
+                    <input type="radio" id="radioEuro" name="currency" class="main__pricing__currency-selector____containerinput" checked="checked">
+                    <label for="eur" class="main__pricing__currency-selector__container__text">Euros (€)</label>
+                </div>
+                <div class="main__pricing__currency-selector__container">
+                    <input type="radio" id="radioPound" name="currency" class="main__pricing__currency-selector__container__input">
+                    <label for="pound" class="main__pricing__currency-selector__container__text">Pounds (£)</label>
+                </div>
+                <div class="main__pricing__currency-selector__container">
+                    <input type="radio" id="radioDolar" name="currency" class="main__pricing__currency-selector__container__input">
+                    <label for="dolar" class="main__pricing__currency-selector__container__text">Dolars ($)</label>
+                </div>
+            </article>
+
+            <article class="main__pricing__article red-border">
+                <div class="main__pricing__article__price">
+                    <h3 class="main__pricing__article__price__title main__pricing__article__price__extra-padding-top">Basic</h3>
+                    <h2 class="main__pricing__article__price__cost red-text open-sans" id="basicPrice">0€</h2>
+                </div>
+
+                <div class="main__pricing__article__feature-list">
+                    <div class="main__pricing__article__feature-list__feature">
+                        <img src="img/Checkbox.svg" class="main__pricing__article__feature-list__feature__img" alt="">
+                        <h5 class="main__pricing__article__feature-list__feature__text">100 MB HDD</h5>
                     </div>
 
-                    <div class="main--pricing--section--feature-list--feature">
-                        <img src="img/Checkbox.svg" class="main--pricing--section--feature-list--feature--img" >
-                        <h5 class="main--pricing--section--feature-list--feature--text">1 Subdomain</h5>
+                    <div class="main__pricing__article__feature-list__feature">
+                        <img src="img/Checkbox.svg" class="main__pricing__article__feature-list__feature__img" alt="">
+                        <h5 class="main__pricing__article__feature-list__feature__text">1 Subdomain</h5>
                     </div>
 
-                    <div class="main--pricing--section--feature-list--feature">
-                        <img src="img/Checkbox.svg" class="main--pricing--section--feature-list--feature--img" >
-                        <h5 class="main--pricing--section--feature-list--feature--text">2 E-mails</h5>
+                    <div class="main__pricing__article__feature-list__feature">
+                        <img src="img/Checkbox.svg" class="main__pricing__article__feature-list__feature__img" alt="">
+                        <h5 class="main__pricing__article__feature-list__feature__text">2 E-mails</h5>
                     </div>
 
-                    <div class="main--pricing--section--feature-list--feature">
-                        <img src="img/Crossbox.svg" class="main--pricing--section--feature-list--feature--img" >
-                        <h5 class="main--pricing--section--feature-list--feature--text">Two years license</h5>
+                    <div class="main__pricing__article__feature-list__feature">
+                        <img src="img/Crossbox.svg" class="main__pricing__article__feature-list__feature__img" alt="">
+                        <h5 class="main__pricing__article__feature-list__feature__text">Two years license</h5>
                     </div>
 
-                    <div class="main--pricing--section--feature-list--feature">
-                        <img src="img/Crossbox.svg" class="main--pricing--section--feature-list--feature--img" >
-                        <h5 class="main--pricing--section--feature-list--feature--text">Full support</h5>
+                    <div class="main__pricing__article__feature-list__feature">
+                        <img src="img/Crossbox.svg" class="main__pricing__article__feature-list__feature__img" alt="">
+                        <h5 class="main__pricing__article__feature-list__feature__text">Full support</h5>
                     </div>
                 </div>
 
-                <button class="main--pricing--section--rounded-button red-background">
-                    <p class="main--pricing--section--rounded-button--text">Begin</p>
+                <button class="main__pricing__article__rounded-button red-background">
+                    Begin
                 </button>
-            </section>
+            </article>
 
-            <section class="main--pricing--section blue-border">
-                <div class="main--pricing--section--price">
-                    <h3 class="main--pricing--section--price--title">Proffesional</h3>
-                    <h1 class="main--pricing--section--price--cost blue-text open-sans">$25</h1>
-                    <h5 class="main--pricing--section--price--offer">Limited offer</h5>
+            <article class="main__pricing__article blue-border">
+                <div class="main__pricing__article__price">
+                    <h3 class="main__pricing__article__price__title">Proffesional</h3>
+                    <h2 class="main__pricing__article__price__cost blue-text open-sans" id="proffesionalPrice">25€</h2>
+                    <h5 class="main__pricing__article__price__offer">Limited offer</h5>
                 </div>
 
-                <div class="main--pricing--section--feature-list">
-                    <div class="main--pricing--section--feature-list--feature">
-                        <img src="img/Checkbox.svg" class="main--pricing--section--feature-list--feature--img" >
-                        <h5 class="main--pricing--section--feature-list--feature--text">500 MB HDD</h5>
+                <div class="main__pricing__article__feature-list">
+                    <div class="main__pricing__article__feature-list__feature">
+                        <img src="img/Checkbox.svg" class="main__pricing__article__feature-list__feature__img" alt="">
+                        <h5 class="main__pricing__article__feature-list__feature__text">500 MB HDD</h5>
                     </div>
 
-                    <div class="main--pricing--section--feature-list--feature">
-                        <img src="img/Checkbox.svg" class="main--pricing--section--feature-list--feature--img" >
-                        <h5 class="main--pricing--section--feature-list--feature--text">2 Subdomain</h5>
+                    <div class="main__pricing__article__feature-list__feature">
+                        <img src="img/Checkbox.svg" class="main__pricing__article__feature-list__feature__img" alt="">
+                        <h5 class="main__pricing__article__feature-list__feature__text">2 Subdomain</h5>
                     </div>
 
-                    <div class="main--pricing--section--feature-list--feature">
-                        <img src="img/Checkbox.svg" class="main--pricing--section--feature-list--feature--img" >
-                        <h5 class="main--pricing--section--feature-list--feature--text">5 E-mails</h5>
+                    <div class="main__pricing__article__feature-list__feature">
+                        <img src="img/Checkbox.svg" class="main__pricing__article__feature-list__feature__img" alt="">
+                        <h5 class="main__pricing__article__feature-list__feature__text">5 E-mails</h5>
                     </div>
 
-                    <div class="main--pricing--section--feature-list--feature">
-                        <img src="img/Checkbox.svg" class="main--pricing--section--feature-list--feature--img" >
-                        <h5 class="main--pricing--section--feature-list--feature--text">One year license</h5>
+                    <div class="main__pricing__article__feature-list__feature">
+                        <img src="img/Checkbox.svg" class="main__pricing__article__feature-list__feature__img" alt="">
+                        <h5 class="main__pricing__article__feature-list__feature__text">One year license</h5>
                     </div>
 
-                    <div class="main--pricing--section--feature-list--feature">
-                        <img src="img/Crossbox.svg" class="main--pricing--section--feature-list--feature--img" >
-                        <h5 class="main--pricing--section--feature-list--feature--text">Full support</h5>
+                    <div class="main__pricing__article__feature-list__feature">
+                        <img src="img/Crossbox.svg" class="main__pricing__article__feature-list__feature__img" alt="">
+                        <h5 class="main__pricing__article__feature-list__feature__text">Full support</h5>
                     </div>
                 </div>
 
-                <button class="main--pricing--section--rounded-button blue-background">
-                    <p class="main--pricing--section--rounded-button--text">Begin</p>
+                <button class="main__pricing__article__rounded-button blue-background">
+                    Begin
                 </button>
-            </section>
+            </article>
 
-            <section class="main--pricing--section green-border">
-                <div class="main--pricing--section--price">
-                    <h3 class="main--pricing--section--price--title">Premium</h3>
-                    <h1 class="main--pricing--section--price--cost green-text open-sans">$60</h1>
-                    <h5 class="main--pricing--section--price--offer">Limited offer</h5>
+            <article class="main__pricing__article green-border">
+                <div class="main__pricing__article__price">
+                    <h3 class="main__pricing__article__price__title">Premium</h3>
+                    <h2 class="main__pricing__article__price__cost green-text open-sans" id="premiumPrice">60€</h2>
+                    <h5 class="main__pricing__article__price__offer">Limited offer</h5>
                 </div>
 
-                <div class="main--pricing--section--feature-list">
-                    <div class="main--pricing--section--feature-list--feature">
-                        <img src="img/Checkbox.svg" class="main--pricing--section--feature-list--feature--img" >
-                        <h5 class="main--pricing--section--feature-list--feature--text">500 MB HDD</h5>
+                <div class="main__pricing__article__feature-list">
+                    <div class="main__pricing__article__feature-list__feature">
+                        <img src="img/Checkbox.svg" class="main__pricing__article__feature-list__feature__img" alt="">
+                        <h5 class="main__pricing__article__feature-list__feature__text">500 MB HDD</h5>
                     </div>
 
-                    <div class="main--pricing--section--feature-list--feature">
-                        <img src="img/Checkbox.svg" class="main--pricing--section--feature-list--feature--img" >
-                        <h5 class="main--pricing--section--feature-list--feature--text">2 Subdomain</h5>
+                    <div class="main__pricing__article__feature-list__feature">
+                        <img src="img/Checkbox.svg" class="main__pricing__article__feature-list__feature__img" alt="">
+                        <h5 class="main__pricing__article__feature-list__feature__text">2 Subdomain</h5>
                     </div>
 
-                    <div class="main--pricing--section--feature-list--feature">
-                        <img src="img/Checkbox.svg" class="main--pricing--section--feature-list--feature--img" >
-                        <h5 class="main--pricing--section--feature-list--feature--text">5 E-mails</h5>
+                    <div class="main__pricing__article__feature-list__feature">
+                        <img src="img/Checkbox.svg" class="main__pricing__article__feature-list__feature__img" alt="">
+                        <h5 class="main__pricing__article__feature-list__feature__text">5 E-mails</h5>
                     </div>
 
-                    <div class="main--pricing--section--feature-list--feature">
-                        <img src="img/Checkbox.svg" class="main--pricing--section--feature-list--feature--img" >
-                        <h5 class="main--pricing--section--feature-list--feature--text">Two year license</h5>
+                    <div class="main__pricing__article__feature-list__feature">
+                        <img src="img/Checkbox.svg" class="main__pricing__article__feature-list__feature__img" alt="">
+                        <h5 class="main__pricing__article__feature-list__feature__text">Two year license</h5>
                     </div>
 
-                    <div class="main--pricing--section--feature-list--feature">
-                        <img src="img/Checkbox.svg" class="main--pricing--section--feature-list--feature--img" >
-                        <h5 class="main--pricing--section--feature-list--feature--text">Full support</h5>
+                    <div class="main__pricing__article__feature-list__feature">
+                        <img src="img/Checkbox.svg" class="main__pricing__article__feature-list__feature__img" alt="">
+                        <h5 class="main__pricing__article__feature-list__feature__text">Full support</h5>
                     </div>
                 </div>
 
-                <button class="main--pricing--section--rounded-button green-background">
-                    <p class="main--pricing--section--rounded-button--text">Begin</p>
+                <button class="main__pricing__article__rounded-button green-background">
+                    Begin
                 </button>
-            </section>
-        </article>
+            </article>
+        </section>
 
-        <article class="main--contact">
-            <section class="main--contact--info">
-                <h1 class="main--contact--info--title">Any questions?</h1>
-
-                <h2 class="main--contact--info--subtitle ">Leave your email address or call us!</h2>
-
-                <div class="main--contact--info--container">
-                    <img src="img/Mail-Icon.svg" class="main--contact--info--container--icon">
-                    <h3 class="main--contact--info--container--information open-sans">info@bestshop.xyz</h3>
+        <section class="main__slider">
+            <div id="slider" class="main__slider__view">
+                <div class="main__slider__view__UI">
+                    <img id="sliderLeftArrow" class="main__slider__view__UI__left-arrow" src="img/slider-arrow.svg">
+                    <img id="sliderRightArrow" class="main__slider__view__UI__right-arrow" src="img/slider-arrow.svg">
+                    <div class="main__slider__view__UI__tracker">
+                        <div class="main__slider__view__UI__tracker__circle main__slider__view__UI__tracker__current-circle"></div>
+                        <div class="main__slider__view__UI__tracker__circle"></div>
+                        <div class="main__slider__view__UI__tracker__circle"></div>
+                        <div class="main__slider__view__UI__tracker__circle"></div>
+                        <div class="main__slider__view__UI__tracker__circle"></div>
+                    </div>
                 </div>
 
-                <div class="main--contact--info--container">
-                    <img src="img/Phone-Icon.svg" class="main--contact--info--container--icon">
-                    <h3 class="main--contact--info--container--information open-sans">123 456 789</h3>
+                <div class="main__slider__view__content">
+                    <img class="main__slider__view__content__image" src="img/slider/Image1.jpg">
+                    <img class="main__slider__view__content__image" src="img/slider/Image2.jpg">
+                    <img class="main__slider__view__content__image" src="img/slider/Image3.jpg">
+                    <img class="main__slider__view__content__image" src="img/slider/Image4.jpg">
+                    <img class="main__slider__view__content__image" src="img/slider/Image5.jpg">
                 </div>
-            </section>
+            </div>
+        </section>
+
+        <section class="main__contact" id="Contact">
+            <article class="main__contact__info">
+                <h2 class="main__contact__info__title">Any questions?</h2>
+
+                <h2 class="main__contact__info__subtitle">Leave your email address or call us!</h2>
+
+                <div class="main__contact__info__container">
+                    <img src="img/Mail-Icon.svg" class="main__contact__info__container__icon" alt="">
+                    <h3 class="main__contact__info__container__information open-sans">info@bestshop.xyz</h3>
+                </div>
+
+                <div class="main__contact__info__container">
+                    <img src="img/Phone-Icon.svg" class="main__contact__info__container__icon" alt="">
+                    <h3 class="main__contact__info__container__information open-sans">123 456 789</h3>
+                </div>
+            </article>
             
-            <form id="contact-info">
-                <section class="main--contact--input">
-                    <div class="main--contact--input--container">
-                        <label for="name" class="main--contact--input--container--text blue-text">NAME</label>
-                        <input id="name" type="text" class="main--contact--input--container--input">
+            <article class="main__contact__form">
+                <div class="main__contact__form__input">
+                    <div class="main__contact__form__input__container">
+                        <label for="name" class="main__contact__form__input__container__text blue-text">NAME</label>
+                        <input id="name" type="text" class="main__contact__form__input__container__input">
                     </div>
     
-                    <div class="main--contact--input--container">
-                        <label for="email" class="main--contact--input--container--text blue-text">EMAIL</label>
-                        <input id="email" type="text" class="main--contact--input--container--input">
+                    <div class="main__contact__form__input__container">
+                        <label for="email" class="main__contact__form__input__container__text blue-text">EMAIL</label>
+                        <input id="email" type="text" class="main__contact__form__input__container__input">
                     </div>
-                </section>
+                </div>
     
-                <section class="main--contact--send">
-                    <input type="checkbox" id="checkbox" class="main--contact--send--checkbox">
+                <form class="main__contact__form__send">
+                    <label class="main__contact__form__send__checkbox">
+                        <input type="checkbox" id="checkbox"  aria-label="Checkbox">
+                        <span class="main__contact__form__send__checkbox__border" id="checkbox-visual"></span>
+                    </label>
 
-                    <p class="main--contact--send--text">I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the European Parliament’s and Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive)</p>
+                    <p class="main__contact__form__send__text">I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the European Parliament’s and Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive)</p>
     
-                    <input type="submit" value="Send" class="main--contact--send--rounded-button blue-background main--contact--send--rounded-button--text"></input>
-                </section>
-            </form>
-        </article>
+                    <button type="button" class="main__contact__form__send__rounded-button blue-background main__contact__send__rounded-button__text"> Send </button>
+                </form>
+            </article>
+        </section>
+
+        <div class="main__button-container">
+            <button class="main__button-container__return-button blue-background">Return to top</button>
+        </div>
     </main>
 
     <footer class="footer">
-        <div class="footer--text">
-            <h2 class="footer--text--title blue-text">OXYGENShop</h2>
+        <div class="footer__text">
+            <h2 class="footer__text__title blue-text">OXYGENShop</h2>
 
-            <h4 class="footer--text--subtitle">© 2022 OXYGEN, All Rights Reserved</h4>
+            <h4 class="footer__text__subtitle">© 2022 OXYGEN, All Rights Reserved</h4>
         </div>
         
-        <div class="footer--social-networks">
-            <img src="img/Twitter-Icon.svg" alt="Twitter" class="footer--social-networks--icon">
+        <div class="footer__social-networks">
+            <img src="img/Twitter-Icon.svg" class="footer__social-networks__icon" alt="Twitter">
 
-            <img src="img/Facebook-Icon.svg" alt="Facebook" class="footer--social-networks--icon">    
+            <img src="img/Facebook-Icon.svg" class="footer__social-networks__icon" alt="Facebook">    
         </div>
     </footer>
 </body>
