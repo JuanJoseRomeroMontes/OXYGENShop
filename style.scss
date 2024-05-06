@@ -6,7 +6,7 @@
 @import 'scss/slider.scss';
 @import 'scss/contact.scss';
 @import 'scss/footer.scss';
- 
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,14 +14,14 @@
     --red-color: #FB3B64;
     --blue-color: #08A6E4;
     --green-color: #55DFB4;
-    font-family: Raleway, OpenSans;
+    font-family: Raleway, 'Open Sans';
 } 
 
 .main{
     margin-top: 11.25rem;
 
     &__button-container{
-        margin-top: 50px;
+        margin-top: 3.125em;
         width: 100%;
         display: flex;
         justify-content: flex-end;
@@ -31,7 +31,7 @@
             padding: 1.3em 6.8%;
             border: none;
             border-radius: 5em;
-            box-shadow: 5px 10px 14px #07ACE64A;
+            box-shadow: 0.313em 0.625em 0.875em #07ACE64A;
             color: white;
             font-weight: 700;
             font-size: 1rem;
@@ -62,17 +62,17 @@ body {
 .green-text{
     color: var(--green-color);
 }
- 
+
 .blue-border{
-    border: 1.5px solid var(--blue-color);
+    border: 0.095rem solid var(--blue-color);
 }
 
 .red-border{
-    border: 1.5px solid var(--red-color);
+    border: 0.095rem solid var(--red-color);
 }
 
 .green-border{
-    border: 1.5px solid var(--green-color);
+    border: 0.095rem solid var(--green-color);
 }
 
 .blue-background{
@@ -88,5 +88,5 @@ body {
 }
 
 .open-sans{
-    font-family: openSans;
+    font-family: 'Open Sans';
 }

@@ -15,8 +15,6 @@ class Slider{
         if(this.iterator > this.imagesList.length-1)
             this.iterator = 0;
 
-        console.log(`Current iterator: ${this.iterator} | Previous iterator: ${this.previousIterator}`);
-
         this.changeDisplay();
     }
 
@@ -32,7 +30,7 @@ class Slider{
 
     changeDisplay(){
         this.imagesContainer.style.transform = `translateX(${this.iterator * -100}%)`;
-
+        
         this.trackerList[this.previousIterator].classList.toggle("main__slider__view__UI__tracker__current-circle");
         this.trackerList[this.iterator].classList.toggle("main__slider__view__UI__tracker__current-circle");
     }
@@ -48,7 +46,7 @@ document.getElementById("sliderLeftArrow").addEventListener("click", function ca
     slider.retreat() 
    });
 
-setInterval(function callAdvance() {
+const timer = setInterval(function callAdvance() {
     slider.advance() 
    }, 
    5000);
